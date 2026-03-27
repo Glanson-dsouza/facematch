@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Matcher AI - Live</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h1>Face Matcher AI</h1>
+        <p id="status">Initializing AI Models...</p>
+
+        <div class="main-container">
+            <div class="box">
+                <label>Person A (Upload Image)</label>
+                <input type="file" id="image-upload" accept="image/*">
+                <div class="view">
+                    <img id="img-preview" src="https://via.placeholder.com/150" alt="Preview">
+                </div>
+            </div>
+
+            <div class="box">
+                <label>Person B (Live Webcam)</label>
+                <div class="view live-view">
+                    <video id="video" autoplay muted></video>
+                </div>
+                <button id="capture-btn" class="secondary-btn">Capture Photo</button>
+            </div>
+        </div>
+
+        <button id="compare-btn" disabled>Compare Now</button>
+        
+        <div class="result-area">
+            <h2 id="result-percent">0%</h2>
+            <p id="result-text">Ready to analyze</p>
+        </div>
+    </div>
+</body>
+</html>
